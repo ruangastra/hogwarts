@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hogwarts School of Witchcraft & Wizardry</title>
+        <link rel="stylesheet" href="style.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Ambient Music -->
+        <audio id="bgMusic" loop>
+            <source src="assets/music/hogwarts-theme.mp3" type="audio/mp3">
+        </audio>
+
+        <!-- Floating Candles -->
+        <div id="candles-container"></div>
+
+        <!-- Navigation -->
+        <nav>
+            <div class="logo-area">
+                <img src="assets/images/hogwarts.png" class="logo">
+                <h1>HOGWARTS SCHOOL <br> <span>OF WITCHCRAFT & WIZARDRY</span></h1>
+            </div>
+
+            <ul>
+                <li><a href="classes.html">Classes</a></li>
+                <li><a href="professors.html">Professors</a></li>
+                <li><a href="wands.html">Wands</a></li>
+                <li><a href="rules.html">School Rules</a></li>
+                <li><a href="owls.html">O.W.L.s</a></li>
+                <li><a href="newts.html">N.E.W.T.s</a></li>
+            </ul>
+        </nav>
+        
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="fog"></div>
+
+            <div class="hero-content">
+                <h2>Welcome to Hogwarts</h2>
+
+                <p>
+                    Explore magical classes, discover wand lore,
+                    meet renowned professors, and prepare for your
+                    O.W.L.s and N.E.W.T.s examinations.
+                </p>
+            </div>
+
+            <div class="scroll-indicator">
+                ↓
+            </div>
+        </section>
+
+        <section class="houses">
+            <h2>Choose Your House</h2>
+
+            <div class="house-grid">
+                <div class="house-card gryffindor" onclick="selectHouse('Gryffindor')">
+                    <img src="assets/images/gryffindor.png">
+                    <h3>Gryffindor</h3>
+                </div>
+
+                <div class="house-card ravenclaw" onclick="selectHouse('Ravenclaw')">
+                    <img src="assets/images/ravenclaw.png">
+                    <h3>Ravenclaw</h3>
+                </div>
+
+                <div class="house-card hufflepuff" onclick="selectHouse('Hufflepuff')">
+                    <img src="assets/images/hufflepuff.png">
+                    <h3>Hufflepuff</h3>
+                </div>
+
+                <div class="house-card slytherin" onclick="selectHouse('Slytherin')">
+                    <img src="assets/images/slytherin.png">
+                    <h3>Slytherin</h3>
+                </div>
+            </div>
+        </section>
+
+        <div id="house-banner">
+            No House Selected
+        </div>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>

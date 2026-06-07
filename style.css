@@ -1,0 +1,407 @@
+:root{
+    --accent: #d4af37;
+}
+
+/* =====================
+GLOBAL
+===================== */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Cinzel', serif;
+    background: #0b0b0b;
+    color:#f5e7c1;
+    overflow-x:hidden;
+}
+
+/* =====================
+NAVIGATION
+===================== */
+.logo{
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-area h1 {
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+.logo-area span {
+    font-size: 0.8rem;
+}
+
+nav{
+    position:fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 40px;
+    background:rgba(0, 0, 0, 0.65);
+    backdrop-filter:blur(10px);
+    border-bottom:2px solid var(--accent);
+    z-index:1000;
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a{
+    color:#ffffff;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color: var(--accent);
+}
+
+/* =====================
+HERO
+===================== */
+
+.hero{
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url("assets/images/hogwarts-castle.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align:center;
+}
+
+.hero-content{
+    position: relative;
+    z-index: 20;
+}
+
+.hero h2{
+    font-size:6rem;
+    margin-bottom: 25px;
+    text-shadow: 0 0 25px rgba(255,255,255,.2);
+}
+
+.hero p{
+    max-width:650px;
+    margin:auto;
+    line-height:2;
+    font-size: 1.2rem;
+}
+
+/* =====================
+FOG
+===================== */
+
+.fog{
+    position: absolute;
+    inset: 0;
+    background: url("assets/images/fog.png") repeat-x;
+    background-size: cover;
+    opacity: .15;
+    animation: fogMove 20s ease-in-out infinite;
+    z-index: 5;
+}
+
+@keyframes fogMove {
+    0%{
+        transform: translateX(-50px);
+    }
+
+    50%{
+        transform: translateX(50px);
+    }
+
+    100%{
+        transform: translateX(-50px);
+    }
+}
+
+/* =====================
+SCROLL INDICATOR
+===================== */
+
+.scroll-indicator{
+    position: absolute;
+    bottom: 40px;
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce{
+    0%, 100%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(10px);
+    }
+}
+
+/* =====================
+FLOATING CANDLES
+===================== */
+
+#candles-container{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index: 15;
+}
+
+.candle{
+    position:absolute;
+    width:8px;
+    height:35px;
+    background:#fff3c4;
+    border-radius:8px;
+    animation: floatUpDown 6s ease-in-out infinite, sway 10s ease-in-out infinite;
+}
+
+.candle::before{
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 1.5px;
+    width: 5px;
+    height: 7px;
+    background: orange;
+    border-radius: 50%;
+    box-shadow: 0 0 15px orange;
+}
+
+@keyframes floatUpDown{
+
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-15px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes sway{
+
+    0%{
+        margin-left:0;
+    }
+
+    50%{
+        margin-left:8px;
+    }
+
+    100%{
+        margin-left:0;
+    }
+}
+
+/* =====================
+HOUSES
+===================== */
+
+.houses{
+    padding:120px 50px;
+    background: linear-gradient(rgba(10, 10, 10, .95), rgba(20, 20, 20, .95));
+}
+
+.houses h2{
+    text-align:center;
+    margin-bottom:50px;
+    font-size: 3rem;
+}
+
+.house-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap:25px;
+}
+
+.house-card{
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.house-card img{
+    width:130px;
+    height:130px;
+    object-fit:contain;
+}
+
+.house-card h3{
+    margin-top: 20px;
+}
+
+/* =====================
+HOUSES BANNER
+===================== */
+
+#house-banner{
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid var(--accent);
+    border-bottom: 2px solid var(--accent);
+    font-size: 1.4rem;
+    background: rgba(255,255,255,.03);
+}
+
+.gryffindor:hover{
+    box-shadow:0 0 25px crimson;
+}
+
+.slytherin:hover{
+    box-shadow:0 0 25px green;
+}
+
+.ravenclaw:hover{
+    box-shadow:0 0 25px royalblue;
+}
+
+.hufflepuff:hover{
+    box-shadow:0 0 25px goldenrod;
+}
+
+/* =====================
+CONTENT PAGE
+===================== */
+
+.page{
+    max-width:1200px;
+    margin:auto;
+    padding:60px 30px;
+}
+
+.page-title{
+    text-align:center;
+    margin-bottom:50px;
+    font-size:3rem;
+}
+
+.card-grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background: rgba(255,255,255,.05);
+    padding:25px;
+    border-radius:15px;
+    backdrop-filter:blur(6px);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    box-shadow: 0 0 20px rgba(255,215,0,.3);
+}
+
+.card h3{
+    color: var(--accent);
+    margin-bottom:15px;
+}
+
+.card ul{
+    padding-left:20px;
+}
+
+/* =====================
+PROFESSOR CARDS
+===================== */
+
+.professor{
+    text-align:center;
+}
+
+.professor img{
+    width:200px;
+    height:250px;
+    object-fit:cover;
+    border-radius:12px;
+    margin-bottom:15px;
+}
+
+/* =====================
+MAGIC PARTICLES
+===================== */
+
+#magic-particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+}
+
+.particle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:white;
+    animation: sparkle 3s infinite;
+}
+
+@keyframes sparkle{
+
+    0%,100%{
+        opacity:0;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
+
+/* =====================
+SPARK
+===================== */
+
+.spark{
+    position:absolute;
+    width:15px;
+    height:15px;
+    background: var(--accent);
+    border-radius:50%;
+    animation: spark 1s forwards;
+    pointer-events:none;
+}
+
+@keyframes spark{
+
+    from{
+        opacity:1;
+        transform:scale(1);
+    }
+
+    to{
+        opacity:0;
+        transform:scale(5);
+    }
+}
