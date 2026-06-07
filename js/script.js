@@ -4,7 +4,9 @@
 
 const candleContainer = document.getElementById("candles-container");
 
-for(let i = 0; i < 50; i++){
+const candleCount = window.innerWidth < 768 ? 20 : 50;
+
+for(let i = 0; i < candleCount; i++){
     const candle = document.createElement("div");
 
     candle.classList.add("candle");
@@ -20,7 +22,7 @@ for(let i = 0; i < 50; i++){
 
     const size = 0.7 + Math.random() * 0.8;
     candle.style.transform = `scale(${size})`;
-    
+
     candle.style.top = (Math.random() * window.innerHeight) + "px";
     candle.style.animationDuration = (10 + Math.random() * 10) + "s";
     candleContainer.appendChild(candle);
