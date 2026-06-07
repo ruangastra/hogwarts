@@ -405,3 +405,112 @@ SPARK
         transform:scale(5);
     }
 }
+
+/* =====================
+TABLETS
+===================== */
+
+@media (max-width: 1024px){
+    .hero h2{
+        font-size: 4rem;
+    }
+
+    .house-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+/* =====================
+MOBILE
+===================== */
+
+@media (max-width: 768px){
+
+    /* NAVIGATION */
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+        padding:15px;
+    }
+
+    .logo{
+        width:45px;
+        height:45px;
+    }
+
+    .logo-area h1{
+        font-size:.9rem;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+    }
+
+    nav a{
+        font-size:.9rem;
+    }
+
+    /* HERO */
+
+    .hero{
+        background-position: center center;
+        padding:100px 20px 50px;
+    }
+
+    .hero h2{
+        font-size:2.5rem;
+        line-height:1.1;
+    }
+
+    .hero p{
+        font-size:1rem;
+        line-height:1.7;
+        max-width:90%;
+    }
+
+    /* HOUSES */
+
+    .houses{
+        padding:80px 20px;
+    }
+
+    .houses h2{
+        font-size:2rem;
+    }
+
+    .house-grid{
+        grid-template-columns:1fr;
+    }
+
+    .house-card{
+        padding:20px;
+    }
+
+    .house-card img{
+        width:90px;
+        height:90px;
+    }
+
+    /* BANNER */
+
+    #house-banner{
+        font-size:1rem;
+        padding:15px;
+    }
+
+    /* CANDLES */
+
+    .candle{
+        width:5px;
+        height:25px;
+    }
+
+    .candle::before{
+        width:3px;
+        height:5px;
+    }
+
+}
